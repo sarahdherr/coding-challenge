@@ -12,7 +12,7 @@ Welcome to Sarah's coding challenge submission! It is built with Node, Sequelize
 3. `npm run seed`
 4. `npm run build`
 5. `npm start`
-6. Go to http://localhost:8080/ (Check out the `Messages` tab to see the solution to the first question and the `Golden Pond` tab to see the solution to the second question.)
+6. Go to http://localhost:8080/ in your browser of choice (Check out the `Messages` tab to see the solution to the first question and the `Golden Pond` tab to see the solution to the second question.)
 
 ## Deeper look at the solution code
 
