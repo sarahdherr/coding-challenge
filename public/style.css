@@ -1,0 +1,18 @@
+.form-container {
+  width: 50vw;
+  margin-left: 25vw;
+}
+
+.center {
+  text-align: center;
+}
+
+.pond-padding {
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
+.messages-padding {
+  margin-left: 30vw;
+  margin-right: 30vw;
+}
