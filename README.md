@@ -2,16 +2,17 @@
 Welcome to Sarah's coding challenge submission! It is built with Node, Sequelize, Express and React. There is a GUI on the browser to see the answers to both questions.
 
 ## Machine Setup:
-- Install and run Postgres (version 9.6)
+- Install and run Postgres (version 9.6), including the `psql` command line tool (you can download it at http://postgresapp.com/).
 - Install node (version 7.8.0)
 - Install npm (version 4.2.0)
 
 ## Run the code:
 1. `npm install`
-2. `npm run seed`
-3. `npm run build`
-4. `npm start`
-5. Go to localhost:8080
+2. `createdb sarah_herr_coding_challenge`
+3. `npm run seed`
+4. `npm run build`
+5. `npm start`
+6. Go to http://localhost:8080/
 
 ## Deeper look at the solution code
 
@@ -28,7 +29,7 @@ The result from these queries are displayed on the front end through AJAX reques
 ### Question 2: Golden Pond
 The solution functions for this question are in `browser/helper_functions/pond_functions`. The functionality is exported to `/browser/components/Pond.jsx` to be used in `this.handlePondSubmit`.
 
-To interact with my solution code, I also made a repl (https://repl.it/JekI/1) with these functions.
+To interact with my solution code, I also made a repl (https://repl.it/JekI/2) with these functions.
 
 ## Questions or Comments
 If you have any questions or problems, please don't hesitate to email me at `sarahherr02@gmail.com`.

@@ -3,13 +3,13 @@
 // takes in P or S movement and changes the degrees pointed (0 = North)
 const directions = {
   'P': (deg) => {
-        const newDeg = (deg - 90) % 360
-        return normalizeDegs(newDeg)
-      },
+    const newDeg = (deg - 90) % 360
+    return normalizeDegs(newDeg)
+  },
   'S': (deg) => {
-        const newDeg = (deg + 90) % 360
-        return normalizeDegs(newDeg)
-      }
+    const newDeg = (deg + 90) % 360
+    return normalizeDegs(newDeg)
+  }
 }
 
 // if degrees become negative, converts it to a degree between 0 and 360
@@ -50,29 +50,33 @@ function spaceParse (str, position) {
 
 // POND FUNCTION:
 
-// Pond constructor function, has upper-right coordinates as integers and an array of ducks
+// Pond constructor function, has upper-right coordinates as integers
 function Pond (str) {
   this.gridX = spaceParse(str, 0)
   this.gridY = spaceParse(str, 1)
-  this.ducks = []
 }
 
 // DUCK FUNCTIONS:
 
 // takes a starting position as string and creates an instance of Duck
 Pond.prototype.duck = function (strInput) {
-  const newDuck = new Duck(strInput)
-  this.ducks.push(newDuck)
-  return newDuck
+  return new Duck(strInput, [this.gridX, this.gridY])
 }
 
-// Duck constructor function, has coordinates as an array [x, y] and orientation as string
-function Duck (str) {
+// Duck constructor function, has coordinates as an array [x, y], orientation as string, and the ducks pond dimensions
+function Duck (str, pondDims) {
   this.coordinates = [ +spaceParse(str, 0), +spaceParse(str, 1) ]
   this.orientation = spaceParse(str, 2)
+  this.pondSize = pondDims
 }
 
 // MOVE FUNCTIONS:
+
+// if the next move from the duck is outside of the pond, then the move is not made
+function validatePondBounds (next, previous, bounds) {
+  if (next[0] <= bounds[0] && next[1] <= bounds[1] && next[0] > -1 && next[1] > -1) return next
+  return previous
+}
 
 // takes the series of steps as a string, loops through them and performs the needed changes to the duck position
 Duck.prototype.move = function (strInput) {
@@ -81,7 +85,8 @@ Duck.prototype.move = function (strInput) {
     if (step === 'S' || step === 'P') {
       this.orientation = rotate(step, this.orientation)
     } else if (step === 'F') {
-      this.coordinates = forward[this.orientation](this.coordinates)
+      const nextStep = forward[this.orientation](this.coordinates)
+      this.coordinates = validatePondBounds(nextStep, this.coordinates, this.pondSize)
     } else {
       console.log('Invalid input')
     }
