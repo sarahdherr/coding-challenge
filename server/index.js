@@ -3,7 +3,7 @@
 const path = require('path')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
-const chalk = require('chalk')
+const { cyan } = require('chalk')
 const express = require('express')
 const app = express()
 
@@ -26,5 +26,5 @@ app.use(morgan('dev'))
    })
 
    .listen('8080', function () {
-     console.log(chalk.cyan('Server listening at port 8080'))
+     console.log(cyan('Server listening at port 8080'))
    })

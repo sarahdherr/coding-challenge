@@ -21,20 +21,26 @@ export default class PondComp extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handlePondSubmit = this.handlePondSubmit.bind(this)
   }
+
   handleChange (evt) {
     this.setState({
       [evt.target.name]: evt.target.value
     })
   }
+
   handlePondSubmit (evt) {
     evt.preventDefault()
+
     const pond = new Pond(this.state.pondInput)
     const duck1 = pond.duck(this.state.duck1Input)
     const duck2 = pond.duck(this.state.duck2Input)
+
     duck1.move(this.state.duck1Move)
     duck2.move(this.state.duck2Move)
+
     this.setState({ pond, duck1, duck2, solution: !this.state.solution }, () => console.log(this.state))
   }
+
   render () {
     return (
       <div>

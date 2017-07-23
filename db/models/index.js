@@ -9,14 +9,14 @@ const Domain = require('./domain')
 
 // associations
 Participant.belongsTo(Message)
-Message.hasMany(Participant)
 Participant.belongsTo(PType)
-PType.hasMany(Participant)
 Participant.belongsTo(Email)
-Email.hasMany(Participant)
 Email.belongsTo(Domain)
-Domain.hasMany(Email)
 Email.belongsTo(Person)
+Message.hasMany(Participant)
+PType.hasMany(Participant)
+Email.hasMany(Participant)
+Domain.hasMany(Email)
 Person.hasMany(Email)
 
 module.exports = { Message, PType, Participant, Person, Email, Domain }

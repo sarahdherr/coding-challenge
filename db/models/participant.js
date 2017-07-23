@@ -1,6 +1,6 @@
 'use strict'
 
-var Sequelize = require('sequelize')
 var db = require('../index.js')
 
+// This is empty because it is pretty much just table of associations
 module.exports = db.define('participants', {})

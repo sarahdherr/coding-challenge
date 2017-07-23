@@ -1,8 +1,8 @@
 'use strict'
 
-var Sequelize = require('sequelize')
+var { STRING } = require('sequelize')
 var db = require('../index.js')
 
 module.exports = db.define('people', {
-  name: Sequelize.STRING
+  name: STRING
 })

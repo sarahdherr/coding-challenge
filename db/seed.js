@@ -21,7 +21,6 @@ const messages = seed(Message, messageValues)
 const ptypes = seed(PType, ptypeValues)
 const people = seed(Person, personValues)
 const domains = seed(Domain, domainValues)
-
 const emails = seed(Email, emailValues)
 const participants = seed(Participant, participantValues)
 
@@ -44,7 +43,6 @@ function seed (Model, rows) {
       rows = Promise.props(
         mapValues(others,
           other =>
-            // Is other a function? If so, call it. Otherwise, leave it alone.
             typeof other === 'function' ? other() : other)
       ).then(rows)
     }

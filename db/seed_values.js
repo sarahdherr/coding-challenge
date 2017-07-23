@@ -1,3 +1,5 @@
+// Data to seed the DB with
+
 const messageValues = {
   message1: {subject: 'Giraffe Speed', message_text: 'Over short distances, giraffes can run up to 35 mph.'},
   message2: {subject: 'Giraffe Thirsty', message_text: 'Giraffes only need to drink water once every couple of days. They get most of their water from their plant-based diet -- which is good considering their height makes the process of drinking difficult.'},
