@@ -7,6 +7,7 @@ Welcome to Sarah's coding challenge submission! It is built with Node, Sequelize
 - Install npm (version 4.2.0)
 
 ## Run the code:
+After cloning the repo to your local machine and are in the folder, run the following commands:
 1. `npm install`
 2. `createdb sarah_herr_coding_challenge`
 3. `npm run seed`
