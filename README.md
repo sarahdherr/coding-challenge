@@ -31,4 +31,4 @@ The solution functions for this question are in `browser/helper_functions/pond_f
 To interact with my solution code, I also made a repl (https://repl.it/JekI/1) with these functions.
 
 ## Questions or Comments
-If you have any questions or problems, please don't hesitate to email me at `sarahherr@gmail.com`.
+If you have any questions or problems, please don't hesitate to email me at `sarahherr02@gmail.com`.
